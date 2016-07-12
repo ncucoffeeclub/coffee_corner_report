@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $.getScript("E:/Program Files/Git/git/coffee_corner_report/js/fade.js", function(){
+    $.getScript("js/fade.js", function(){
        // alert("Script loaded");
        fadeIn(iBase.Id('start-page'));
     });
