@@ -25,7 +25,7 @@
 	      version    : 'v2.5'
 	    });
 
-	    // Now that we've initialized the JavaScript SDK, we call 
+	  // Now that we've initialized the JavaScript SDK, we call 
 	  // FB.getLoginStatus().  This function gets the state of the
 	  // person visiting this page and can return one of three states to
 	  // the callback you provide.  They can be:
@@ -88,10 +88,9 @@
 	    console.log('Welcome!  Fetching your information.... ');
 	    FB.api('/me', function(response) {
 	      console.log('Successful login for: ' + response.name);
-	      document.getElementById('status').innerHTML =
-	        'Thanks for logging in, ' + response.name + '!';
 	    });
 	  }
+
 	</script>
 
 	<div class="container-fluid">
@@ -129,7 +128,7 @@
 		 	<div>
 		 		<div class="row">
 			 		<div class="col-xs-12 text-center">
-			 			<button id="start-page-button" type="button" class="btn btn-primary btn-md submit-button start-button" onclick="change_page(0,1)">開始</button>
+			 			<button id="start-page-button" type="button" class="btn btn-primary btn-md submit-button start-button" onclick="checkLoginState();">開始</button>
 			 		</div>
 		 		</div>
 		 	</div>
