@@ -7,7 +7,7 @@
         margin-top:5% !important;
     }
     .formInput{
-        margin-bottom:30% !important;
+        /*margin-bottom:30% !important;*/
     }
     #materialForm{
         margin-top:10% !important;
@@ -16,12 +16,12 @@
 
 @media(max-width:480px){
     .formInput{
-        margin-bottom:70% !important;
+        /*margin-bottom:70% !important;*/
     }
 }
 
 body{
-    background-color:#3498db;
+    /*background-color:#3498db;*/
     font-family: 'Lato', sans-serif;
 }
 .flatButton{
@@ -65,7 +65,7 @@ input, label{
 }
 label{
     color:#212121;
-    position:absolute;
+    /*position:absolute;*/
     font-size:20px;
     font-weight:400;
     transition: all .2s
@@ -81,7 +81,7 @@ input{
     border-bottom:2px solid #E1E1E1;
     
     width:100%;
-    margin-bottom:15%;
+    /*margin-bottom:15%;*/
     color:#8C8C8C;
 
 }
