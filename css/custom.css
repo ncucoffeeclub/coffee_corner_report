@@ -222,17 +222,17 @@ div[data-toggle="buttons"] label:active, div[data-toggle="buttons"] label.active
 	display: block;
 	line-height: 29px;
 	text-align: center;
-	border: 1px solid rgba(255, 255, 255, .9);
+	border: 1px solid rgba(0, 0, 0, .9);
 	border-radius: 50%;
 	-webkit-border-radius: 3px;
 	   -moz-border-radius: 3px;
 			border-radius: 3px;
 	font-size: 12px;
-	color: rgba(255, 255, 255, .5);
+	color: rgba(0, 0, 0, .5);
 }
 
 .page-links input:hover {
-	border: 1px solid rgba(255, 255, 255, .9);
-	color: rgba(255, 255, 255, .9);
+	border: 1px solid rgba(0, 0, 0, .9);
+	color: rgba(0, 0, 0, .9);
 }
 
