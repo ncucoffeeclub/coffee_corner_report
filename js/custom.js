@@ -1,5 +1,10 @@
 $(document).ready(function(){
     $.getScript("js/fade.js", function(){
+      window.onload = function(){
+        fadeIn(iBase.Id('start-page'));
+         now_page = 0;
+        
+      }
         
     });
 
@@ -16,11 +21,7 @@ function press_enter(box_id,button){
   });
 }
 
-window.onload = function(){
-  fadeIn(iBase.Id('start-page'));
-   now_page = 0;
-  
-}
+
 
 var answer = {};
 
