@@ -1,18 +1,21 @@
 html, body {
     height: 100%;
+    width: 100%;
 }
 
 html {
+	background-image: url(../images/background_image.jpg);
+	background-size: 100% ;
+	background-repeat: no-repeat;
     display: table;
     margin: auto;
 }
 
 body {
 	/*background-color: #EEEEEE;*/
-	background-image: url(../images/background_image.jpg);
-	background-size: 100% ;
-	margin: 0;
-	background-repeat: no-repeat;
+	
+	/*margin: 0;*/
+	
     display: table-cell;
     vertical-align: middle;
 }
