@@ -20,6 +20,12 @@ body {
     vertical-align: middle;
 }
 
+@media screen and (min-width: 767px){
+	body {
+		background-size: 100% auto ;
+	}
+}
+
 .row{
 	margin-top: 20px;
 }
