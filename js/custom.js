@@ -58,7 +58,6 @@ var grade_mapping_array=[
 var user_name;
 var grade;
 var now_page;
-
 var user_nick_name;
 
 
@@ -159,19 +158,101 @@ function change_page(from,to){
       fading(from,to);
       break;
     case 5:
-      answer['first-answer'] = $('input[name="gender1"]:checked').val();
+      answer['first_answer'] = $('input[name="gender1"]:checked').val();
       fading(from,to);
       break;
     case 6:
-      answer['second-answer'] = $('input[name="gender2"]:checked').val();
+      answer['second_answer'] = $('input[name="gender2"]:checked').val();
       fading(from,to);
       break;
     case 7:
-      answer['second-answer'] = $('input[name="gender3"]:checked').val();
+      answer['third_answer'] = $('input[name="gender3"]:checked').val();
       fading(from,to);
       break;
  
   }
 
   
+}
+
+
+var first_answer_array = ["6 bar","8 bar","9 bar"];
+var second_answer_array = ["吧檯","拖延","骨幹"];
+var third_answer_array = ["有獎?徵答?","咕嚕?蛤?","GO?GO?"];
+
+function checkfull(callback){
+  var isfull = false;
+  checkLoginState(function(flag){
+    if(flag){
+      if(answer.first_answer == undefined){
+        fading(null,5);
+        isfull = true;
+      }else if(answer.second_answer == undefined){
+        fading(null,6);
+        isfull = true;
+      }else if(answer.third_answer == undefined){
+        fading(null,7);
+        isfull = true;
+      }
+    }else{
+      if(answer.name== undefined){
+        fading(null,1);
+        isfull = true;
+      }else if(answer.fbname == undefined){
+        fading(null,2);
+        isfull = true;
+      }else if(answer.grade == undefined){
+        fading(null,3);
+        isfull = true;
+      }else if(answer.message == undefined){
+        fading(null,4);
+        isfull = true;
+      }else if(answer.first_answer == undefined){
+        fading(null,5);
+        isfull = true;
+      }else if(answer.second_answer == undefined){
+        fading(null,6);
+        isfull = true;
+      }else if(answer.third_answer == undefined){
+        fading(null,7);
+        isfull = true;
+      }
+    }
+    callback(isfull);
+  })
+}
+
+function preview(){
+
+  checkfull(function(flag){
+    if(!flag){
+      from = now_page;
+      $('#page_nav_'+from).removeClass('active');
+      fadeOut(iBase.Id(page_id[from]),20,0,function(){
+        if(to < button_id.length){
+          fadeIn(iBase.Id('preivew-page'),20,null);
+          $('#'+button_id[from]).prop('disabled', false);
+          now_page = to;
+        }
+      });
+
+      iBase.Id('preview-name').innerText = answer.name;
+      iBase.Id('preview-fbname').innerText = answer.fbname;
+
+      checkLoginState(function(flag){
+        if(flag){
+          iBase.Id('preview-nofacebook').style.display = 'none';
+        }else{
+          iBase.Id('preview-grade').innerText = answer.grade;
+          iBase.Id('preview-message').innerText = answer.message;
+        }
+      })
+
+      iBase.Id('preview-first-answer').innerText = answer.first_answer;
+      iBase.Id('preview-second-answer').innerText = answer.second_answer;
+      iBase.Id('preview-third-answer').innerText = answer.third_answer;
+
+      fadeOut(iBase.Id('page_links_nav'),20,0,null);
+    }
+  })
 }
