@@ -244,7 +244,9 @@ var google_script_url = "https://script.google.com/macros/s/AKfycbzkiet3Bvvr_BC1
 
 function Sendresult(callback){
 
-  xdr(google_script_url,'GET',JSON.stringify(answer),google_doc_result,function(){});
+  $.getJSON(  google_script_url ,function( returnValue ){
+    google_doc_result(callback,returnValue);
+  });
 }
 
 
