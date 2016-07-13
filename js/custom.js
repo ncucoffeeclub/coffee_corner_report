@@ -245,8 +245,8 @@ var google_script_url = "https://script.google.com/macros/s/AKfycbzkiet3Bvvr_BC1
 function Sendresult(callback){
 
   $.ajax({
-  url: "https://script.google.com/macros/s/AKfycbzkiet3Bvvr_BC1V7kxFOowBejrDMreD9nI9FKY3mLwx_35Qe0l/exec",
-  dataType:"jsonp",
+  url: "https://www.google.com",
+  // dataType:"jsonp",
   success: function(response){
     console.log(response);
   },
