@@ -13,7 +13,7 @@ function press_enter(button){
     if (key == 13) {
       $('#'+button_id[button]).click(); 
     }  
-  }
+  });
 }
 
 var answer = {};
