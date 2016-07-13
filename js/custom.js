@@ -7,8 +7,17 @@ $(document).ready(function(){
     });
 });
 
+function press_enter(button){
+  var key = window.event ? e.keyCode : e.which;  
+  if (key == 13) {
+    $('#'+button).click(); 
+  }  
+}
+
 window.onload = function () {
-  fadeIn(iBase.Id('start-page')); 
+  fadeIn(iBase.Id('start-page'),function(){
+    press_enter(button_id[0]);
+  }); 
 }
 
 var answer = {};
@@ -49,19 +58,28 @@ var grade;
 
 var user_nick_name;
 
+
+
+
+
 function fading(from,to){
-  $('#'+button_id[from]).prop('disabled', true);
 
   fadeOut(iBase.Id(page_id[from]),50,0,function(){
     if(to < button_id.length){
       fadeIn(iBase.Id(page_id[to]),50,null);
       $('#'+button_id[from]).prop('disabled', false);
+      press_enter(button_id[to]);
     }
     
   });
 }
 
+
+
+
 function change_page(from,to){
+
+  $('#'+button_id[from]).prop('disabled', true);
 
   switch(from){
     case 0:
