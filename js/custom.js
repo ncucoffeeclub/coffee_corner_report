@@ -64,7 +64,7 @@ var user_nick_name;
 
 function add_page_links_nav(counter,offset){
     var pretext =  document.getElementById("page_links_nav").innerHTML;
-    document.getElementById("page_links_nav").innerHTML = pretext+"<li><input type=\"button\" value="+(counter-offset+1)+" onclick=\"fading(null,"+ counter + ")\"></input></li>";
+    document.getElementById("page_links_nav").innerHTML = pretext+"<li><input type=\"button\" onclick=\"fading(null,"+ counter + ")\"></input></li>";
 }
 
 
@@ -107,7 +107,7 @@ function change_page(from,to){
 
         }else{
           fading(from,to);
-          
+
           var length = page_id.length;
           for(var i=to;i<length;i++){
             add_page_links_nav(i,to);
