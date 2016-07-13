@@ -217,7 +217,7 @@ function checkfull(callback){
   })
 }
 
-function preview(){
+function submit(){
 
   answer['third_answer'] = $('input[name="gender3"]:checked').val();
 
@@ -226,25 +226,9 @@ function preview(){
       from = now_page;
       $('#page_nav_'+from).removeClass('active');
       fadeOut(iBase.Id(page_id[from]),20,0,function(){
-        fadeIn(iBase.Id('preview-page'),20,null);
+        fadeIn(iBase.Id('thank-page'),20,null);
         $('#'+button_id[from]).prop('disabled', false);
       });
-
-      iBase.Id('preview-name').innerText = answer.name;
-      iBase.Id('preview-fbname').innerText = answer.fbname;
-
-      checkLoginState(function(flag){
-        if(flag){
-          iBase.Id('preview-nofacebook').style.display = 'none';
-        }else{
-          iBase.Id('preview-grade').innerText = answer.grade;
-          iBase.Id('preview-message').innerText = answer.message;
-        }
-      })
-
-      iBase.Id('preview-first-answer').innerText = first_answer_array[answer.first_answer];
-      iBase.Id('preview-second-answer').innerText = second_answer_array[answer.second_answer];
-      iBase.Id('preview-third-answer').innerText = third_answer_array[answer.third_answer];
 
       fadeOut(iBase.Id('page_links_nav'),20,0,null);
     }
