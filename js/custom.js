@@ -244,7 +244,7 @@ var google_script_url = "https://script.google.com/macros/s/AKfycbzkiet3Bvvr_BC1
 
 function Sendresult(callback){
 
-  xdr(google_script_url,'GET',JSON.stringify(answer),google_doc_result,null);
+  xdr(google_script_url,'GET',answer,google_doc_result,null);
 }
 
 
@@ -284,7 +284,7 @@ function xdr(url, method, data, callback, errback) {
 
         if('withCredentials' in req) {
             req.open(method, url, true);
-            req.setRequestHeader('Content-Type', 'application/json');
+            req.setRequestHeader('Content-Type', 'application/x-www-form-urlencode');
             req.onerror = errback;
             req.onreadystatechange = function() {
                 if (req.readyState === 4) {
