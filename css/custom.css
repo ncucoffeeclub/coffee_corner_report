@@ -6,6 +6,12 @@ html, body {
 html {
 
     display: table;
+
+    background-image: url(../images/background_image.jpg);
+    -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
     
 	/*background-repeat: no-repeat;*/
 }
@@ -13,14 +19,14 @@ html {
 body {
 	/*background-color: #EEEEEE;*/
 	
-	margin: auto;
-    background-image: url(../images/background_image.jpg) no-repeat center center;
+	/*margin: auto;
+    background-image: url(../images/background_image.jpg);
     -webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
-	background-size: cover;
+	background-size: cover;*/
 	/*margin: 0;*/
-	
+	background-repeat: no-repeat;
     display: table-cell;
     vertical-align: middle;
 }
