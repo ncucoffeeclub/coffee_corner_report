@@ -7,11 +7,17 @@ html {
 
     display: table;
     margin: auto;
+    background-image: url(../images/background_image.jpg);
+    -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 
 body {
 	/*background-color: #EEEEEE;*/
-	background-image: url(../images/background_image.jpg);
+	
 	background-size: cover ;
 	background-repeat: no-repeat;
 	/*margin: 0;*/
@@ -20,7 +26,7 @@ body {
     vertical-align: middle;
 }
 
-@media screen and (min-width: 480px){
+/*@media screen and (min-width: 480px){
 	body {
 		background-image: url(../images/background_image.jpg);
 		background-size: cover ;
@@ -34,7 +40,7 @@ body {
 		background-size: 100% auto;
 		background-repeat: no-repeat;
 	}
-}
+}*/
 
 .row{
 	margin-top: 20px;
