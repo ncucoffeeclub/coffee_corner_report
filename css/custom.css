@@ -296,4 +296,9 @@ div[data-toggle="buttons"] label:active, div[data-toggle="buttons"] label.active
 	color: #000;
 }
 
+.copyright{
+	text-align: right;
+	
+}
+
 
