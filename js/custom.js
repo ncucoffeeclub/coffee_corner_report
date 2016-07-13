@@ -18,7 +18,6 @@ function press_enter(box_id,button){
 
 window.onload = function(){
   fadeIn(iBase.Id('start-page'));
-   var length = page_id.length;
    now_page = 0;
   
 }
@@ -101,12 +100,15 @@ function change_page(from,to){
           answer['facebookid'] = facebookid;
           fading(from,5);
 
+          var length = page_id.length;
           for(var i=to;i<length;i++){
             add_page_links_nav(i,to);
           }
+
         }else{
           fading(from,to);
-
+          
+          var length = page_id.length;
           for(var i=to;i<length;i++){
             add_page_links_nav(i,to);
           }
