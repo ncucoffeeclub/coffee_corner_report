@@ -97,7 +97,7 @@ function change_page(from,to){
           fading(from,5);
 
           var length = page_id.length;
-          for(var i=to;i<length;i++){
+          for(var i=5;i<length;i++){
             add_page_links_nav(i,to);
           }
 
