@@ -247,10 +247,7 @@ function Sendresult(callback){
   $.ajax({
     dataType:"jsonp",
     type: 'GET',
-    headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'text/plain'
-    },
+    contentType: "application/json; charset=utf-8",
     url: google_script_url,
     data: JSON.stringify(answer),
   }).done(function(data){
