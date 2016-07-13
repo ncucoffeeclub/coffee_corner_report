@@ -9,7 +9,7 @@ html {
 
 body {
 	background-color: #EEEEEE;
-	background-image: url(images/background_image.jpg);
+	background-image: url(../images/background_image.jpg);
     display: table-cell;
     vertical-align: middle;
 }
