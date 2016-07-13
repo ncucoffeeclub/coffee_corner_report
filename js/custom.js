@@ -91,7 +91,7 @@ function change_page(from,to){
   switch(from){
     case 0:
       custom_login(function(name,facebookid){
-        if(user_name != null && facebookid != null){
+        if(name != null && facebookid != null){
           answer['name'] = $('#name').val();
           answer['facebookid'] = facebookid;
           fading(from,5);
