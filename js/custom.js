@@ -222,6 +222,7 @@ function submit(){
   answer['third_answer'] = $('input[name="gender3"]:checked').val();
 
   checkfull(function(flag){
+    console.log("flag"+flag);
     if(!flag){
       Sendresult(function(){
         from = now_page;
