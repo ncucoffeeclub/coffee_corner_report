@@ -284,6 +284,7 @@ function xdr(url, method, data, callback, errback) {
 
         if('withCredentials' in req) {
             req.open(method, url, true);
+            req.setRequestHeader('Content-Type', 'application/json');
             req.onerror = errback;
             req.onreadystatechange = function() {
                 if (req.readyState === 4) {
