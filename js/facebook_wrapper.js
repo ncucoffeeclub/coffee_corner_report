@@ -75,6 +75,7 @@ function custom_login(callback){
       } else if (response.status === 'not_authorized') {
         callback(null,null);
       } else {
+        callback(null,null);
         // The person is not logged into Facebook, so we're not sure if
         // they are logged into this app or not.
       }
