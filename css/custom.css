@@ -5,21 +5,20 @@ html, body {
 
 html {
 
-    /*display: table;*/
-    margin: auto;
-    background-image: url(../images/background_image.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
+    display: table;
+    
 	/*background-repeat: no-repeat;*/
 }
 
 body {
 	/*background-color: #EEEEEE;*/
 	
-	background-size: cover ;
-	background-repeat: no-repeat;
+	margin: auto;
+    background-image: url(../images/background_image.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 	/*margin: 0;*/
 	
     display: table-cell;
