@@ -283,11 +283,6 @@ function xdr(url, method, data, callback, errback) {
         req = new XMLHttpRequest();
 
         if('withCredentials' in req) {
-            beforeSend: function(xhrObj){  //加入這些  
-              xhrObj.setRequestHeader("Access-Control-Allow-Origin","*");//加入這些  
-              xhrObj.setRequestHeader("Access-Control-Allow-Methods","GET,PUT,POST,DELETE");//加入這些  
-            },  
-            headers: { 'Access-Control-Allow-Origin': '*' }, //加入這些  
             req.open(method, url, true);
             req.setRequestHeader('Content-Type', 'application/x-www-form-urlencode');
             req.onerror = errback;
