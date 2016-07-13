@@ -244,8 +244,15 @@ var google_script_url = "https://script.google.com/macros/s/AKfycbzkiet3Bvvr_BC1
 
 function Sendresult(callback){
 
-  $.getJSON(  google_script_url ,function( returnValue ){
-    google_doc_result(callback,returnValue);
+  $.ajax(  
+    url: google_script_url, 
+    type: "GET",   
+    dataType: 'jsonp',
+    cache: false,
+    data: JSON.stringify(answer),
+    success: function(response){                          
+        alert(response);                   
+    }      
   });
 }
 
