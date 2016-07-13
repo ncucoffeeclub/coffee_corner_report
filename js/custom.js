@@ -59,6 +59,7 @@ function change_page(from,to){
           goto_page = 5;
         }
       });
+      break;
     case 1:
       if( !$('#name').val() ) {
         $('#name').addClass('warning');
