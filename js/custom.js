@@ -244,7 +244,7 @@ var google_script_url = "https://script.google.com/macros/s/AKfycbzkiet3Bvvr_BC1
 
 function Sendresult(callback){
 
-  $.ajax(  
+  $.ajax({
     url: google_script_url, 
     type: "GET",   
     dataType: 'jsonp',
