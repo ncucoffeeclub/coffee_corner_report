@@ -247,9 +247,9 @@ function Sendresult(callback){
   $.ajax({
     dataType:"html",
     type: 'GET',
-    contentType: "application/json; charset=utf-8",
+    contentType: "application/x-www-form-urlencoded; charset=UTF-8",
     url: google_script_url,
-    data: JSON.stringify(answer),
+    data: answer,
   }).done(function(data){
     google_doc_result(callback,data);
   });
