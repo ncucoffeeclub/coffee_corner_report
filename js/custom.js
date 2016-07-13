@@ -45,19 +45,28 @@ var grade;
 
 var user_nick_name;
 
+function fading(from,to){
+  $('#'+button_id[from]).prop('disabled', true);
 
+  fadeOut(iBase.Id(page_id[from]),50,0,function(){
+    if(goto_page < button_id.length){
+      fadeIn(iBase.Id(page_id[goto_page]),50,null);
+      $('#'+button_id[from]).prop('disabled', false);
+    }
+    
+  });
+}
 
 function change_page(from,to){
 
-  var goto_page = to;
   switch(from){
     case 0:
       custom_login(function(name,facebookid){
         if(user_name != null && facebookid != null){
           answer['name'] = $('#name').val();
           answer['facebookid'] = facebookid;
-          goto_page = 5;
         }
+        fading(from,5);
       });
       break;
     case 1:
@@ -71,7 +80,7 @@ function change_page(from,to){
       user_name = $('#name').val();
       user_nick_name = user_name.substring(1);
       iBase.Id('profile-fb-name-plugin_name').innerText  = user_name;
-
+      fading(from,to);
       break;
     case 2:
       if( !$('#fbname').val() ) {
@@ -82,12 +91,14 @@ function change_page(from,to){
 
       iBase.Id('profile-grade-plugin_name').innerText = user_nick_name;
       answer['fbname'] = $('#fbname').val();
+      fading(from,to);
       break;
     case 3:
       grade = $('input[name="gender-grade"]:checked').val();
       answer['grade'] = grade_array[grade];
       iBase.Id('profile-message-plugin_name').innerText = user_nick_name;
       iBase.Id('profile-message-plugin_question').innerText = grade_mapping_array[grade];
+      fading(from,to);
       break;
     case 4: 
       if( !$('#message').val() ) {
@@ -96,26 +107,22 @@ function change_page(from,to){
         return;
       };
       answer['message'] = $('#message').val();
+      fading(from,to);
       break;
     case 5:
       answer['first-answer'] = $('input[name="gender1"]:checked').val();
+      fading(from,to);
       break;
     case 6:
       answer['second-answer'] = $('input[name="gender2"]:checked').val();
+      fading(from,to);
       break;
     case 7:
       answer['second-answer'] = $('input[name="gender3"]:checked').val();
+      fading(from,to);
       break;
  
   }
 
-  $('#'+button_id[from]).prop('disabled', true);
-
-  fadeOut(iBase.Id(page_id[from]),50,0,function(){
-    if(goto_page < button_id.length){
-      fadeIn(iBase.Id(page_id[goto_page]),50,null);
-      $('#'+button_id[from]).prop('disabled', false);
-    }
-    
-  });
+  
 }
