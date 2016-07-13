@@ -97,6 +97,8 @@ function change_page(from,to){
       custom_login(function(name,facebookid){
         if(name != null && facebookid != null){
           answer['name'] = name;
+          user_name = name;
+          user_nick_name = user_name.substring(1);
           answer['facebookid'] = facebookid;
           fading(from,5);
 
