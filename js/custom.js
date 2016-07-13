@@ -8,10 +8,12 @@ $(document).ready(function(){
 });
 
 function press_enter(button){
-  var key = window.event ? e.keyCode : e.which;  
-  if (key == 13) {
-    $('#'+button_id[button]).click(); 
-  }  
+  $('#'+button_id[button]).on('keyup keypress', function(e) {
+    var key = window.event ? e.keyCode : e.which;  
+    if (key == 13) {
+      $('#'+button_id[button]).click(); 
+    }  
+  }
 }
 
 var answer = {};
