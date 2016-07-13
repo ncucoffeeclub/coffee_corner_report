@@ -1,7 +1,9 @@
 $(document).ready(function(){
     $.getScript("js/fade.js", function(){
-       // alert("Script loaded");
        fadeIn(iBase.Id('start-page'));
+    });
+
+     $.getScript("js/facebook_wrapper.js", function(){
     });
 });
 
@@ -47,7 +49,16 @@ var user_nick_name;
 
 function change_page(from,to){
 
+  var goto_page = to;
   switch(from){
+    case 0:
+      custom_login(function(name,facebookid){
+        if(user_name != null && facebookid != null){
+          answer['name'] = $('#name').val();
+          answer['facebookid'] = facebookid;
+          goto_page = 5;
+        }
+      });
     case 1:
       if( !$('#name').val() ) {
         $('#name').addClass('warning');
@@ -88,10 +99,10 @@ function change_page(from,to){
     case 5:
       answer['first-answer'] = $('input[name="gender1"]:checked').val();
       break;
-    case 3:
+    case 6:
       answer['second-answer'] = $('input[name="gender2"]:checked').val();
       break;
-    case 4:
+    case 7:
       answer['second-answer'] = $('input[name="gender3"]:checked').val();
       break;
  
@@ -100,8 +111,8 @@ function change_page(from,to){
   $('#'+button_id[from]).prop('disabled', true);
 
   fadeOut(iBase.Id(page_id[from]),50,0,function(){
-    if(to < button_id.length){
-      fadeIn(iBase.Id(page_id[to]),50,null);
+    if(goto_page < button_id.length){
+      fadeIn(iBase.Id(page_id[goto_page]),50,null);
       $('#'+button_id[from]).prop('disabled', false);
     }
     

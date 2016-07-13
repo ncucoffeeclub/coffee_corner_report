@@ -55,21 +55,25 @@ function checkLoginState() {
 
   // Here we run a very simple test of the Graph API after login is
   // successful.  See statusChangeCallback() for when this call is made.
-function testAPI() {
-      console.log('Welcome!  Fetching your information.... ');
-      FB.api('/me', function(response) {
-        console.log('Successful login for: ' + response.name);
-      });
-    }
 
-
-function custom_login(){
+function custom_login(callback){
       FB.login(function(response) {
       if (response.status === 'connected') {
-        // Logged into your app and Facebook.
-        testAPI();
+
+        var name;
+        var facebookid;
+
+        if(callback != undefined){
+          FB.api('/me', function(response) {
+            console.log('Successful login for: ' + response.name);
+            console.log('id: ' + response.id);
+            name = response.name;
+            facebookid = response.id;
+            callback(name,facebookid);
+          });
+        }
       } else if (response.status === 'not_authorized') {
-        // The person is logged into Facebook, but not your app.
+        callback(null,null);
       } else {
         // The person is not logged into Facebook, so we're not sure if
         // they are logged into this app or not.
