@@ -232,10 +232,6 @@ function submit(){
         });
         fadeOut(iBase.Id('page_links_nav'),20,0,null);
       });
-      
-
-      
-
     }
   })
 }
@@ -246,8 +242,7 @@ function Sendresult(callback){
 
   var keyset = Object.keys(answer);
   var offset = "?" + keyset[0] + "=" + answer[keyset[0]];
-
-
+  console.log(offset);
 
   for(var i=1;i<keyset.length;i++){
     offset = offset + "&" + keyset[i] + "=" + answer[keyset[i]];
