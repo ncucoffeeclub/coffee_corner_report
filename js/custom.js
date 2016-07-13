@@ -69,7 +69,7 @@ function fading(from,to){
     from = now_page;
   }
   $('#'+button_id[from]).prop('disabled', true);
-  
+
   $('#page_nav_'+from).removeClass('active');
   fadeOut(iBase.Id(page_id[from]),20,0,function(){
     if(to < button_id.length){
@@ -226,11 +226,8 @@ function preview(){
       from = now_page;
       $('#page_nav_'+from).removeClass('active');
       fadeOut(iBase.Id(page_id[from]),20,0,function(){
-        if(to < button_id.length){
-          fadeIn(iBase.Id('preivew-page'),20,null);
-          $('#'+button_id[from]).prop('disabled', false);
-          now_page = to;
-        }
+        fadeIn(iBase.Id('preivew-page'),20,null);
+        $('#'+button_id[from]).prop('disabled', false);
       });
 
       iBase.Id('preview-name').innerText = answer.name;
