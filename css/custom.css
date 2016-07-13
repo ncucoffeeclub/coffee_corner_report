@@ -10,6 +10,7 @@ html {
 body {
 	background-color: #EEEEEE;
 	background-image: url(../images/background_image.jpg);
+	background-size: 100% 100%;
     display: table-cell;
     vertical-align: middle;
 }
@@ -32,7 +33,7 @@ body {
 
 .form-style{
 	padding: 5px;
-	background-color: rgba(255,255,255, 0.5);
+	background-color: rgba(255,255,255, 0.8);
 	display: none;
 	/*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
 }
@@ -247,7 +248,7 @@ div[data-toggle="buttons"] label:active, div[data-toggle="buttons"] label.active
 }
 
 .page-links input {
-	background-color: transparent;
+	background-color: #FFF;
 	width: 12px;
 	height: 12px;
 	margin-top: 3px;
