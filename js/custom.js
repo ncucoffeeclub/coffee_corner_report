@@ -20,9 +20,7 @@ window.onload = function(){
   fadeIn(iBase.Id('start-page'));
    var length = page_id.length;
    now_page = 0;
-  for(var i=0;i<length;i++){
-    add_page_links_nav(i);
-  }
+  
 }
 
 var answer = {};
@@ -65,9 +63,9 @@ var now_page;
 var user_nick_name;
 
 
-function add_page_links_nav(counter){
+function add_page_links_nav(counter,offset){
     var pretext =  document.getElementById("page_links_nav").innerHTML;
-    document.getElementById("page_links_nav").innerHTML = pretext+"<li><input type=\"button\" value="+(counter+1)+" onclick=\"fading(null,"+ counter + ")\"></input></li>";
+    document.getElementById("page_links_nav").innerHTML = pretext+"<li><input type=\"button\" value="+(counter-offset+1)+" onclick=\"fading(null,"+ counter + ")\"></input></li>";
 }
 
 
@@ -102,8 +100,16 @@ function change_page(from,to){
           answer['name'] = $('#name').val();
           answer['facebookid'] = facebookid;
           fading(from,5);
+
+          for(var i=to;i<length;i++){
+            add_page_links_nav(i,to);
+          }
         }else{
           fading(from,to);
+
+          for(var i=to;i<length;i++){
+            add_page_links_nav(i,to);
+          }
         }
         
       });
