@@ -36,6 +36,24 @@ body {
 	/*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
 }
 
+@media screen and(min-width: 767px){
+	.form-style{
+		min-width: 700px;
+	}
+}
+
+@media screen and(max-width: 767px){
+	.form-style{
+		min-width: 80%;
+	}
+}
+
+@media screen and(max-width: 480px){
+	.form-style{
+		min-width: 80%;
+	}
+}
+
 .warning{
 	border-bottom: 3px solid red !important;
 
@@ -79,8 +97,10 @@ input.formInvalid::-webkit-input-placeholder {
 	max-width: 120px;
 }
 
-@media (max-width: 767px){
-	max-width: 90px;
+@media screen and (max-width: 767px){
+	.page-img{
+		max-width: 90px;
+	}
 }
 
 
