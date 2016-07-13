@@ -58,8 +58,8 @@ function change_page(from,to){
       answer['name'] = $('#name').val();
       user_name = $('#name').val();
       user_nick_name = user_name.substring(1);
-      iBase.Id('profile-fb-name-plugin_name').innerHtml = user_name;
-      
+      iBase.Id('profile-fb-name-plugin_name').innerText  = user_name;
+
       break;
     case 2:
       if( !$('#fbname').val() ) {
@@ -68,14 +68,14 @@ function change_page(from,to){
         return;
       };
 
-      iBase.Id('profile-grade-plugin_name').innerHtml = user_nick_name;
+      iBase.Id('profile-grade-plugin_name').innerText = user_nick_name;
       answer['fbname'] = $('#fbname').val();
       break;
     case 3:
       grade = $('input[name="gender-grade"]:checked').val();
       answer['grade'] = grade_array[grade];
-      iBase.Id('profile-message-plugin_name').innerHtml = user_nick_name;
-      iBase.Id('profile-message-plugin_question').innerHtml = grade_mapping_array[grade];
+      iBase.Id('profile-message-plugin_name').innerText = user_nick_name;
+      iBase.Id('profile-message-plugin_question').innerText = grade_mapping_array[grade];
       break;
     case 4: 
       if( !$('#message').val() ) {
