@@ -249,6 +249,7 @@ function Sendresult(callback){
     type: 'GET',
     contentType: 'application/json',
     url: google_script_url,
+    data: JSON.stringify(answer),
   }).done(function(data){
     google_doc_result(callback,data);
   });
