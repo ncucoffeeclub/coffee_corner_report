@@ -81,6 +81,7 @@ function fading(from,to){
     if(to < button_id.length){
       fadeIn(iBase.Id(page_id[to]),20,null);
       $('#'+button_id[from]).prop('disabled', false);
+      now_page = to;
     }
     
   });
@@ -101,10 +102,8 @@ function change_page(from,to){
           answer['name'] = $('#name').val();
           answer['facebookid'] = facebookid;
           fading(from,5);
-          now_page = to;
         }else{
           fading(from,to);
-          now_page = to;
         }
         
       });
@@ -121,7 +120,6 @@ function change_page(from,to){
       user_nick_name = user_name.substring(1);
       iBase.Id('profile-fb-name-plugin_name').innerText  = user_name;
       fading(from,to);
-      now_page = to;
       break;
     case 2:
       if( !$('#fbname').val() ) {
@@ -133,7 +131,6 @@ function change_page(from,to){
       iBase.Id('profile-grade-plugin_name').innerText = user_nick_name;
       answer['fbname'] = $('#fbname').val();
       fading(from,to);
-      now_page = to;
       break;
     case 3:
       grade = $('input[name="gender-grade"]:checked').val();
@@ -141,7 +138,6 @@ function change_page(from,to){
       iBase.Id('profile-message-plugin_name').innerText = user_nick_name;
       iBase.Id('profile-message-plugin_question').innerText = grade_mapping_array[grade];
       fading(from,to);
-      now_page = to;
       break;
     case 4: 
       if( !$('#message').val() ) {
@@ -151,22 +147,18 @@ function change_page(from,to){
       };
       answer['message'] = $('#message').val();
       fading(from,to);
-      now_page = to;
       break;
     case 5:
       answer['first-answer'] = $('input[name="gender1"]:checked').val();
       fading(from,to);
-      now_page = to;
       break;
     case 6:
       answer['second-answer'] = $('input[name="gender2"]:checked').val();
       fading(from,to);
-      now_page = to;
       break;
     case 7:
       answer['second-answer'] = $('input[name="gender3"]:checked').val();
       fading(from,to);
-      now_page = to;
       break;
  
   }
