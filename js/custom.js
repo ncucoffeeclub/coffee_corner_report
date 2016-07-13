@@ -65,8 +65,11 @@ function change_page(from,to){
         if(user_name != null && facebookid != null){
           answer['name'] = $('#name').val();
           answer['facebookid'] = facebookid;
+          fading(from,5);
+        }else{
+          fading(from,to);
         }
-        fading(from,5);
+        
       });
       break;
     case 1:
