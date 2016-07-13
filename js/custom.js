@@ -240,11 +240,11 @@ function submit(){
   })
 }
 
-var google_script_url = "https://script.google.com/macros/s/AKfycbzkiet3Bvvr_BC1V7kxFOowBejrDMreD9nI9FKY3mLwx_35Qe0l/exec?offset"+JSON.stringify(answer)+"&callback=?";
 
 function Sendresult(callback){
 
   console.log(JSON.stringify(answer));
+  var google_script_url = "https://script.google.com/macros/s/AKfycbzkiet3Bvvr_BC1V7kxFOowBejrDMreD9nI9FKY3mLwx_35Qe0l/exec?offset"+JSON.stringify(answer)+"&callback=?";
 
   $.ajax({
     url: google_script_url, 
