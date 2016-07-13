@@ -244,8 +244,11 @@ var google_script_url = "https://script.google.com/macros/s/AKfycbzkiet3Bvvr_BC1
 
 function Sendresult(callback){
 
-  $.getJSON( google_script_url , function(data) {
-      google_doc_result(callback,data);
+  $.ajax({
+    dataType:"jsonp",
+    url: google_script_url,
+  }).done(function(data){
+    google_doc_result(callback,data);
   });
 }
 
