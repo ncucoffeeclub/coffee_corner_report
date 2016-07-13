@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $.getScript("js/fade.js", function(){
-       
+        fadeIn(iBase.Id('start-page');
     });
 
      $.getScript("js/facebook_wrapper.js", function(){
@@ -12,12 +12,6 @@ function press_enter(button){
   if (key == 13) {
     $('#'+button).click(); 
   }  
-}
-
-window.onload = function () {
-  fadeIn(iBase.Id('start-page'),function(){
-    press_enter(button_id[0]);
-  }); 
 }
 
 var answer = {};
