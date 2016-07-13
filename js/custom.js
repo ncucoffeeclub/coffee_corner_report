@@ -1,11 +1,6 @@
 $(document).ready(function(){
     $.getScript("js/fade.js", function(){
-      window.onload = function(){
-        fadeIn(iBase.Id('start-page'));
-         now_page = 0;
-        
-      }
-        
+        fadeIn(iBase.Id('start-page'));        
     });
 
      $.getScript("js/facebook_wrapper.js", function(){
