@@ -3,7 +3,7 @@ body{
 }
 
 form{
-	visibility: none;
+	display: none;
 }
 .row{
 	margin-top: 20px;
