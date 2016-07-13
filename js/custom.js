@@ -19,6 +19,7 @@ function press_enter(box_id,button){
 window.onload = function(){
   fadeIn(iBase.Id('start-page'));
    var length = page_id.length;
+   now_page = 0;
   for(var i=0;i<length;i++){
     add_page_links_nav(i);
   }
@@ -66,11 +67,15 @@ var user_nick_name;
 
 function add_page_links_nav(counter){
     var pretext =  document.getElementById("page_links_nav").innerHTML;
-    document.getElementById("page_links_nav").innerHTML = pretext+"<li><input type=\"button\" value="+(counter+1)+" onclick=\"fading(" + now_page + ","+ counter + ")\"></input></li>";
+    document.getElementById("page_links_nav").innerHTML = pretext+"<li><input type=\"button\" value="+(counter+1)+" onclick=\"fading(null,"+ counter + ")\"></input></li>";
 }
 
 
 function fading(from,to){
+
+  if(from == null){
+    from = now_page;
+  }
 
   fadeOut(iBase.Id(page_id[from]),20,0,function(){
     if(to < button_id.length){
