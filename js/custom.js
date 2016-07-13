@@ -51,6 +51,10 @@ var grade_mapping_array=[
   "系所","高中","大學"
 ]
 
+var first_answer_array = ["6 bar","8 bar","9 bar"];
+var second_answer_array = ["吧檯","拖延","骨幹"];
+var third_answer_array = ["有獎?徵答?","咕嚕?蛤?","GO?GO?"];
+
 var user_name;
 var grade;
 var now_page;
@@ -153,11 +157,11 @@ function change_page(from,to){
       fading(from,to);
       break;
     case 5:
-      answer['first_answer'] = $('input[name="gender1"]:checked').val();
+      answer['first_answer'] = first_answer_array[$('input[name="gender1"]:checked').val()];
       fading(from,to);
       break;
     case 6:
-      answer['second_answer'] = $('input[name="gender2"]:checked').val();
+      answer['second_answer'] = second_answer_array[$('input[name="gender2"]:checked').val()];
       fading(from,to);
       break;
     // case 7:
@@ -171,9 +175,7 @@ function change_page(from,to){
 }
 
 
-var first_answer_array = ["6 bar","8 bar","9 bar"];
-var second_answer_array = ["吧檯","拖延","骨幹"];
-var third_answer_array = ["有獎?徵答?","咕嚕?蛤?","GO?GO?"];
+
 
 function checkfull(callback){
   var isfull = false;
@@ -219,7 +221,7 @@ function checkfull(callback){
 
 function submit(){
 
-  answer['third_answer'] = $('input[name="gender3"]:checked').val();
+  answer['third_answer'] = third_answer_array[$('input[name="gender3"]:checked').val()];
   $('#'+button_id[now_page]).prop('disabled', true);
   checkfull(function(flag){
     console.log("flag"+flag);
