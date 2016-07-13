@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $.getScript("js/fade.js", function(){
-        fadeIn(iBase.Id('start-page'));
+        
     });
 
      $.getScript("js/facebook_wrapper.js", function(){
@@ -14,6 +14,14 @@ function press_enter(box_id,button){
       $('#'+button_id[button]).click(); 
     }  
   });
+}
+
+window.onload = function(){
+  fadeIn(iBase.Id('start-page'));
+   var length = page_id.length;
+  for(var i=0;i<length;i++){
+    add_page_links_nav(i);
+  }
 }
 
 var answer = {};
@@ -51,18 +59,22 @@ var grade_mapping_array=[
 
 var user_name;
 var grade;
+var now_page;
 
 var user_nick_name;
 
 
-
+function add_page_links_nav(counter){
+    var pretext =  document.getElementById("page_links_nav").innerHTML;
+    document.getElementById("page_links_nav").innerHTML = pretext+"<li><input type=\"button\" value="+(counter+1)+" onclick=\"fading(" + now_page + ","+ counter + ")\"></input></li>";
+}
 
 
 function fading(from,to){
 
-  fadeOut(iBase.Id(page_id[from]),50,0,function(){
+  fadeOut(iBase.Id(page_id[from]),20,0,function(){
     if(to < button_id.length){
-      fadeIn(iBase.Id(page_id[to]),50,null);
+      fadeIn(iBase.Id(page_id[to]),20,null);
       $('#'+button_id[from]).prop('disabled', false);
     }
     
@@ -75,6 +87,7 @@ function fading(from,to){
 function change_page(from,to){
 
   $('#'+button_id[from]).prop('disabled', true);
+  now_page = from;
 
   switch(from){
     case 0:
