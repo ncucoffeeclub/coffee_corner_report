@@ -54,7 +54,7 @@
 		 	<div>
 		 		<div class="row">
 			 		<div class="col-xs-12 text-center">
-			 			<button id="start-page-button" type="button" class="btn btn-primary btn-md submit-button start-button" onclick="change_page(0,1)">開始</button>
+			 			<button id="start-page-button" type="button" class="btn btn-primary btn-md submit-button start-button" onclick="change_page(0,1)" >開始</button>
 			 		</div>
 		 		</div>
 		 	</div>
@@ -83,7 +83,7 @@
 				<div class="form-group">
 				    <div class="col-xs-10 col-xs-offset-1">
 				    	<div class="question-text">
-				        	<input type="text" class="formInput" id="name">
+				        	<input type="text" class="formInput" id="name" onkeypress="press_enter(1)">
 				        	
 				    	</div>
 				    </div>
@@ -124,7 +124,7 @@
 				<div class="form-group">
 				    <div class="col-xs-10 col-xs-offset-1">
 				    	<div class="question-text">
-				        	<input type="text" class="formInput" id="fbname">
+				        	<input type="text" class="formInput" id="fbname" onkeypress="press_enter(2)">
 				    	</div>
 				    </div>
 				</div>
