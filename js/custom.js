@@ -240,19 +240,13 @@ function submit(){
   })
 }
 
+var google_script_url = "https://script.google.com/macros/s/AKfycbzkiet3Bvvr_BC1V7kxFOowBejrDMreD9nI9FKY3mLwx_35Qe0l/exec";
 
 function Sendresult(callback){
 
-  $.ajax({
-    type: "GET",
-    url: "https://script.google.com/macros/s/AKfycbzkiet3Bvvr_BC1V7kxFOowBejrDMreD9nI9FKY3mLwx_35Qe0l/exec",
-    dataType: "jsonp",
-    success: google_doc_result(callback,data),
-    error: function (xhr, ajaxOptions, thrownError) {
-      console.log(xhr.status);
-      console.log(thrownError);
-    }
-})
+  $..getJSON( google_script_url , function(data) {
+      google_doc_result(callback,data);
+  });
 }
 
 function google_doc_result(callback,result){
