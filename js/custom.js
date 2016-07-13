@@ -244,16 +244,10 @@ var google_script_url = "https://script.google.com/macros/s/AKfycbzkiet3Bvvr_BC1
 
 function Sendresult(callback){
 
-  $.ajax({
-    dataType:"html",
-    type: 'GET',
-    contentType: "application/x-www-form-urlencoded; charset=UTF-8",
-    url: google_script_url,
-    data: answer,
-  }).done(function(data){
-    google_doc_result(callback,data);
-  });
+  xdr(google_script_url,'GET',JSON.stringify(answer),google_doc_result,null);
 }
+
+
 
 function google_doc_result(callback,result){
   if(result == "same_name"){
@@ -266,4 +260,51 @@ function google_doc_result(callback,result){
       iBase.Id('thank-page-subtitle').innerHTML = "請與<a href=\"https://www.facebook.com/NCUcafeclub\">粉絲團</a>聯絡，由專人會為您服務 </br>"+prehtml;
   }
   callback();
+}
+
+
+
+
+
+
+/**
+ * Make a X-Domain request to url and callback.
+ *
+ * @param url {String}
+ * @param method {String} HTTP verb ('GET', 'POST', 'DELETE', etc.)
+ * @param data {String} request body
+ * @param callback {Function} to callback on completion
+ * @param errback {Function} to callback on error
+ */
+function xdr(url, method, data, callback, errback) {
+    var req;
+    
+    if(XMLHttpRequest) {
+        req = new XMLHttpRequest();
+
+        if('withCredentials' in req) {
+            req.open(method, url, true);
+            req.onerror = errback;
+            req.onreadystatechange = function() {
+                if (req.readyState === 4) {
+                    if (req.status >= 200 && req.status < 400) {
+                        callback(req.responseText);
+                    } else {
+                        errback(new Error('Response returned with non-OK status'));
+                    }
+                }
+            };
+            req.send(data);
+        }
+    } else if(XDomainRequest) {
+        req = new XDomainRequest();
+        req.open(method, url);
+        req.onerror = errback;
+        req.onload = function() {
+            callback(req.responseText);
+        };
+        req.send(data);
+    } else {
+        errback(new Error('CORS not supported'));
+    }
 }
