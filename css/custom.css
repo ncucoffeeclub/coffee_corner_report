@@ -10,7 +10,7 @@ html {
 body {
 	background-color: #EEEEEE;
 	background-image: url(../images/background_image.jpg);
-	background-size: 100% auto;
+	background-size: 100% ;
 	background-repeat: no-repeat;
     display: table-cell;
     vertical-align: middle;
