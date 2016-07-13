@@ -4,11 +4,6 @@ $(document).ready(function(){
     });
 
      $.getScript("js/facebook_wrapper.js", function(){
-      checkLoginState(function(flag){
-        if(flag){
-          document.getElementById('start-page-button').innerText = "你已經填過了";
-        }
-      })
     });
 });
 
