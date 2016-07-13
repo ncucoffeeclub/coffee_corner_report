@@ -245,7 +245,7 @@ var google_script_url = "https://script.google.com/macros/s/AKfycbzkiet3Bvvr_BC1
 function Sendresult(callback){
 
   $.ajax({
-    dataType:"jsonp",
+    dataType:"json",
     url: google_script_url,
   }).done(function(data){
     google_doc_result(callback,data);
