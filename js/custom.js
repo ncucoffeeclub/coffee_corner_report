@@ -223,13 +223,13 @@ function submit(){
 
   checkfull(function(flag){
     if(!flag){
-      from = now_page;
-      $('#page_nav_'+from).removeClass('active');
-      fadeOut(iBase.Id(page_id[from]),20,0,function(){
-        fadeIn(iBase.Id('thank-page'),20,null);
-        $('#'+button_id[from]).prop('disabled', false);
-      });
       Sendresult(function(){
+        from = now_page;
+        $('#page_nav_'+from).removeClass('active');
+        fadeOut(iBase.Id(page_id[from]),20,0,function(){
+          fadeIn(iBase.Id('thank-page'),20,null);
+          $('#'+button_id[from]).prop('disabled', false);
+        });
         fadeOut(iBase.Id('page_links_nav'),20,0,null);
       });
       
@@ -244,16 +244,22 @@ var google_script_url = "https://script.google.com/macros/s/AKfycbzkiet3Bvvr_BC1
 
 function Sendresult(callback){
 
-  console.log(JSON.stringify(answer));
+  var keyset = Object.keys(answer);
+  var offset = "?" + keyset[0] + "=" + answer[keyset[0]];
+
+
+
+  for(var i=1;i<keyset.length;i++){
+    offset = offset + "&" + keyset[i] + "=" + answer[keyset[i]];
+  }
 
   $.ajax({
-    url: google_script_url, 
+    url: google_script_url+offset, 
     type: "GET",   
     dataType: 'jsonp',
     cache: false,
-    data: JSON.stringify(answer),
     success: function(response){                          
-        google_doc_result(callback,response);                   
+        google_doc_result(callback,response);
     },
     error: function(response){
         console.log(response);
