@@ -9,18 +9,23 @@ var answer = {};
 
 var page_id = [
   "start-page",
+  "profile-name",
+  "profile-grade",
+  "profile-message",
   "first-question",
   "second-question",
-  "third-question",
-  "fourth-question"
+  "third-question"
+  
 ]
 
 var button_id = [
   "start-page-button",
+  "profile-name-button",
+  "profile-grade-button",
+  "profile-message-button",
   "first-question-button",
   "second-question-button",
-  "third-question-button",
-  "fourth-question-button"
+  "third-question-button"
 ]
 
 function change_page(from,to){
