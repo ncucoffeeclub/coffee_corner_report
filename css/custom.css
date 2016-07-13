@@ -235,7 +235,7 @@ div[data-toggle="buttons"] label:active, div[data-toggle="buttons"] label.active
 	color: rgba(0, 0, 0, .9);
 }
 
-.page-links input:focus {
+.page-links input.active {
 	background-color: black;
 	border: 1px solid rgba(0, 0, 0, .9);
 	color: rgba(0, 0, 0, .9);
