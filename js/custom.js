@@ -270,7 +270,7 @@ function Sendresult(callback){
 
 function google_doc_result(callback,result){
   if(result == "same_name"){
-     iBase.Id('thank-page-title-text').innerText = "好像有人填過了";
+     iBase.Id('thank-page-title-text').innerText = "好像有人填過了，或有人同名同姓";
      var prehtml = iBase.Id('thank-page-subtitle-text').innerHTML;
       iBase.Id('thank-page-subtitle-text').innerHTML = "請與<a href=\"https://www.facebook.com/NCUcafeclub\">粉絲團</a>聯絡，由專人會為您服務 </br>"+prehtml;
   }else if(result == "same_facebookid"){
