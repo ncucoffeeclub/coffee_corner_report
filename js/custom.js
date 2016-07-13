@@ -1,11 +1,15 @@
 $(document).ready(function(){
     $.getScript("js/fade.js", function(){
-       fadeIn(iBase.Id('start-page'));
+       
     });
 
      $.getScript("js/facebook_wrapper.js", function(){
     });
 });
+
+window.onload = function () {
+  fadeIn(iBase.Id('start-page')); 
+}
 
 var answer = {};
 
