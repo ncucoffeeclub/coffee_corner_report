@@ -256,14 +256,14 @@ div[data-toggle="buttons"] label:active, div[data-toggle="buttons"] label.active
 
 .thank-page-title{
 	margin: 5px;
-	font-size: 48px;
+	font-size: 36px;
 	text-align: left;
 	color: #000;
 }
 
 .thank-page-subtitle{
 	margin: 5px;
-	font-size: 36px;
+	font-size: 24px;
 	text-align: left;
 	color: #000;
 }
