@@ -220,7 +220,7 @@ function checkfull(callback){
 function submit(){
 
   answer['third_answer'] = $('input[name="gender3"]:checked').val();
-
+  $('#'+button_id[from]).prop('disabled', true);
   checkfull(function(flag){
     console.log("flag"+flag);
     if(!flag){
@@ -233,6 +233,8 @@ function submit(){
         });
         fadeOut(iBase.Id('page_links_nav'),20,0,null);
       });
+    }else{
+      $('#'+button_id[from]).prop('disabled', false);
     }
   })
 }
@@ -262,6 +264,7 @@ function Sendresult(callback){
     },
     error: function(response){
         console.log(response);
+        $('#'+button_id[from]).prop('disabled', false);
     }   
   });
 }
