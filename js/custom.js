@@ -254,7 +254,8 @@ function Sendresult(callback){
     type: "GET",   
     dataType: 'jsonp',
     cache: false,
-    success: function(response){                          
+    success: function(response){
+        console.log("success" + response);                        
         google_doc_result(callback,response);
     },
     error: function(response){
