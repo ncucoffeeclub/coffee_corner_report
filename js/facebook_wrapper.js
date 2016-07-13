@@ -58,26 +58,27 @@ function checkLoginState() {
 
 function custom_login(callback){
       FB.login(function(response) {
-      if (response.status === 'connected') {
+        if (response.status === 'connected') {
 
-        var name;
-        var facebookid;
+          var name;
+          var facebookid;
 
-        if(callback != undefined){
-          FB.api('/me', function(response) {
-            console.log('Successful login for: ' + response.name);
-            console.log('id: ' + response.id);
-            name = response.name;
-            facebookid = response.id;
-            callback(name,facebookid);
-          });
+          if(callback != undefined){
+            FB.api('/me', function(response) {
+              console.log('Successful login for: ' + response.name);
+              console.log('id: ' + response.id);
+              name = response.name;
+              facebookid = response.id;
+              callback(name,facebookid);
+            });
+          }
+        } else if (response.status === 'not_authorized') {
+          callback(null,null);
+        } else {
+          console.log(response.status);
+          callback(null,null);
+          // The person is not logged into Facebook, so we're not sure if
+          // they are logged into this app or not.
         }
-      } else if (response.status === 'not_authorized') {
-        callback(null,null);
-      } else {
-        callback(null,null);
-        // The person is not logged into Facebook, so we're not sure if
-        // they are logged into this app or not.
-      }
-    });
+      });
     }
