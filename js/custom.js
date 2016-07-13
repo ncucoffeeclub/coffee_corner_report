@@ -92,7 +92,7 @@ function fading(from,to){
 function change_page(from,to){
 
   $('#'+button_id[from]).prop('disabled', true);
-  now_page = from;
+  now_page = to;
 
   switch(from){
     case 0:
