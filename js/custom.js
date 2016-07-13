@@ -255,7 +255,7 @@ function Sendresult(callback){
     success: function(response){                          
         google_doc_result(callback,response);                   
     },
-    error: function(response)){
+    error: function(response){
         console.log(response);
     }   
   });
