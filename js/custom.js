@@ -244,17 +244,7 @@ var google_script_url = "https://script.google.com/macros/s/AKfycbzkiet3Bvvr_BC1
 
 function Sendresult(callback){
 
-  $.ajax({
-  url: "https://www.google.com",
-  // dataType:"jsonp",
-  success: function(response){
-    console.log(response);
-  },
-  error: function(response){
-    console.log("error");
-  }
-  });
-
+  xdr(google_script_url,'GET',JSON.stringify(answer),google_doc_result,function(){});
 }
 
 
@@ -293,6 +283,11 @@ function xdr(url, method, data, callback, errback) {
         req = new XMLHttpRequest();
 
         if('withCredentials' in req) {
+            beforeSend: function(xhrObj){  //加入這些  
+              xhrObj.setRequestHeader("Access-Control-Allow-Origin","*");//加入這些  
+              xhrObj.setRequestHeader("Access-Control-Allow-Methods","GET,PUT,POST,DELETE");//加入這些  
+            },  
+            headers: { 'Access-Control-Allow-Origin': '*' }, //加入這些  
             req.open(method, url, true);
             req.setRequestHeader('Content-Type', 'application/x-www-form-urlencode');
             req.onerror = errback;
