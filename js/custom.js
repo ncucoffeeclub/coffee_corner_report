@@ -161,10 +161,10 @@ function change_page(from,to){
       answer['second_answer'] = $('input[name="gender2"]:checked').val();
       fading(from,to);
       break;
-    case 7:
-      answer['third_answer'] = $('input[name="gender3"]:checked').val();
-      fading(from,to);
-      break;
+    // case 7:
+    //   answer['third_answer'] = $('input[name="gender3"]:checked').val();
+    //   fading(from,to);
+    //   break;
  
   }
 
@@ -219,6 +219,8 @@ function checkfull(callback){
 }
 
 function preview(){
+
+  answer['third_answer'] = $('input[name="gender3"]:checked').val();
 
   checkfull(function(flag){
     if(!flag){
