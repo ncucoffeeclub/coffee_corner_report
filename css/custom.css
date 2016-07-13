@@ -20,9 +20,20 @@ body {
     vertical-align: middle;
 }
 
+
+@media screen and (min-width: 480px){
+	body {
+		background-image: url(../images/background_image.jpg);
+		background-size: cover ;
+		background-repeat: no-repeat;
+	}
+}
+
 @media screen and (min-width: 767px){
 	body {
-		background-size: 100% auto ;
+		background-image: url(../images/background_image.jpg);
+		background-size: 100% auto;
+		background-repeat: no-repeat;
 	}
 }
 
