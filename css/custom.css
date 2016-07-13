@@ -298,7 +298,11 @@ div[data-toggle="buttons"] label:active, div[data-toggle="buttons"] label.active
 
 .copyright{
 	text-align: right;
-	
+
+}
+
+.fb-like span{
+	vertical-align: middle;
 }
 
 
