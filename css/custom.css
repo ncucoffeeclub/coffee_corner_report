@@ -242,22 +242,18 @@ div[data-toggle="buttons"] label:active, div[data-toggle="buttons"] label.active
 	color: rgba(0, 0, 0, .9);
 }
 
-.preivew-page-answer{
-	font-size: 24px;
+.thank-page-title{
+	margin: 5px;
+	font-size: 48px;
 	text-align: left;
 	color: #000;
 }
 
-.preview-page-question-number{
-	font-size: 16px;
-	text-align: right;
+.thank-page-subtitle{
+	margin: 5px;
+	font-size: 36px;
+	text-align: left;
 	color: #000;
 }
 
-.preivew-page-question{
-	font-size: 16px;
-	text-align: left;
-	font-weight: 500;
-	color: #000;
-}
 
