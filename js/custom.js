@@ -10,7 +10,7 @@ $(document).ready(function(){
 function press_enter(button){
   var key = window.event ? e.keyCode : e.which;  
   if (key == 13) {
-    $('#'+button).click(); 
+    $('#'+button_id[button]).click(); 
   }  
 }
 
@@ -62,7 +62,6 @@ function fading(from,to){
     if(to < button_id.length){
       fadeIn(iBase.Id(page_id[to]),50,null);
       $('#'+button_id[from]).prop('disabled', false);
-      press_enter(button_id[to]);
     }
     
   });
