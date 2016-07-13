@@ -226,7 +226,7 @@ function preview(){
       from = now_page;
       $('#page_nav_'+from).removeClass('active');
       fadeOut(iBase.Id(page_id[from]),20,0,function(){
-        fadeIn(iBase.Id('preivew-page'),20,null);
+        fadeIn(iBase.Id('preview-page'),20,null);
         $('#'+button_id[from]).prop('disabled', false);
       });
 
