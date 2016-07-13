@@ -240,7 +240,7 @@ function submit(){
   })
 }
 
-var google_script_url = "https://script.google.com/macros/s/AKfycbzkiet3Bvvr_BC1V7kxFOowBejrDMreD9nI9FKY3mLwx_35Qe0l/exec"+"&callback=?";
+var google_script_url = "https://script.google.com/macros/s/AKfycbzkiet3Bvvr_BC1V7kxFOowBejrDMreD9nI9FKY3mLwx_35Qe0l/dev"+"&callback=?";
 
 function Sendresult(callback){
 
