@@ -49,8 +49,8 @@ function fading(from,to){
   $('#'+button_id[from]).prop('disabled', true);
 
   fadeOut(iBase.Id(page_id[from]),50,0,function(){
-    if(goto_page < button_id.length){
-      fadeIn(iBase.Id(page_id[goto_page]),50,null);
+    if(to < button_id.length){
+      fadeIn(iBase.Id(page_id[to]),50,null);
       $('#'+button_id[from]).prop('disabled', false);
     }
     
