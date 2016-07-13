@@ -4,6 +4,11 @@ $(document).ready(function(){
     });
 
      $.getScript("js/facebook_wrapper.js", function(){
+      checkLoginState(function(flag){
+        if(flag){
+          document.getElementById('start-page-button').innerText = "你已經填過了";
+        }
+      })
     });
 });
 
@@ -231,6 +236,23 @@ function submit(){
       });
 
       fadeOut(iBase.Id('page_links_nav'),20,0,null);
+
+      function SendScore(){
+            $.get("https://script.google.com/macros/s/AKfycbzkiet3Bvvr_BC1V7kxFOowBejrDMreD9nI9FKY3mLwx_35Qe0l/exec", JSON.stringify(answer),
+                    function (result) {
+                        if(result == "same_name"){
+                           iBase.Id('thank-page-title-text').innerText = "好像有人填過了";
+                           var prehtml = iBase.Id('thank-page-subtitle').innerHTML;
+                            iBase.Id('thank-page-subtitle').innerHTML = "請與<a href=\"https://www.facebook.com/NCUcafeclub\">粉絲團</a>聯絡，由專人會為您服務 </br>"+prehtml;
+                        }else if(result == "same_facebookid"){
+                           iBase.Id('thank-page-title-text').innerText = user_nick_name+"，你已經填過了";
+                           var prehtml = iBase.Id('thank-page-subtitle').innerHTML;
+                            iBase.Id('thank-page-subtitle').innerHTML = "請與<a href=\"https://www.facebook.com/NCUcafeclub\">粉絲團</a>聯絡，由專人會為您服務 </br>"+prehtml;
+                        }
+
+                    });
+        }
+
     }
   })
 }
