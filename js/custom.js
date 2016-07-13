@@ -59,7 +59,7 @@ function change_page(from,to){
       user_name = $('#name').val();
       user_nick_name = user_name.substring(1);
       iBase.Id('profile-fb-name-plugin_name').innerHtml = user_name;
-
+      
       break;
     case 2:
       if( !$('#fbname').val() ) {
