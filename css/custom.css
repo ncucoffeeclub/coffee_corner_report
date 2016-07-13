@@ -302,7 +302,7 @@ div[data-toggle="buttons"] label:active, div[data-toggle="buttons"] label.active
 }
 
 .fb-like span{
-	vertical-align: middle;
+	vertical-align: middle !important;
 }
 
 
