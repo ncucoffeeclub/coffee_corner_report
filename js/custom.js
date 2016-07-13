@@ -242,9 +242,9 @@ function preview(){
         }
       })
 
-      iBase.Id('preview-first-answer').innerText = answer.first_answer;
-      iBase.Id('preview-second-answer').innerText = answer.second_answer;
-      iBase.Id('preview-third-answer').innerText = answer.third_answer;
+      iBase.Id('preview-first-answer').innerText = first_answer_array[answer.first_answer];
+      iBase.Id('preview-second-answer').innerText = second_answer_array[answer.second_answer];
+      iBase.Id('preview-third-answer').innerText = third_answer_array[answer.third_answer];
 
       fadeOut(iBase.Id('page_links_nav'),20,0,null);
     }
