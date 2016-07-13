@@ -248,6 +248,12 @@ div[data-toggle="buttons"] label:active, div[data-toggle="buttons"] label.active
 	color: #000;
 }
 
+.preview-page-question-number{
+	font-size: 16px;
+	text-align: right;
+	color: #000;
+}
+
 .preivew-page-question{
 	font-size: 16px;
 	text-align: left;
