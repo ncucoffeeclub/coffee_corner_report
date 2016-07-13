@@ -8,9 +8,10 @@ html {
 }
 
 body {
-	background-color: #EEEEEE;
+	/*background-color: #EEEEEE;*/
 	background-image: url(../images/background_image.jpg);
 	background-size: 100% ;
+	margin: 0;
 	background-repeat: no-repeat;
     display: table-cell;
     vertical-align: middle;
