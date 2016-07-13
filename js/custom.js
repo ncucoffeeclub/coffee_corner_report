@@ -244,7 +244,17 @@ var google_script_url = "https://script.google.com/macros/s/AKfycbzkiet3Bvvr_BC1
 
 function Sendresult(callback){
 
-  xdr(google_script_url,'GET',answer,google_doc_result,null);
+  $.ajax({
+  url: "https://script.google.com/macros/s/AKfycbzkiet3Bvvr_BC1V7kxFOowBejrDMreD9nI9FKY3mLwx_35Qe0l/exec",
+  dataType:"jsonp",
+  success: function(response){
+    console.log(response);
+  },
+  error: function(response){
+    console.log("error");
+  }
+  });
+
 }
 
 
