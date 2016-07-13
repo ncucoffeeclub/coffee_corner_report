@@ -244,6 +244,8 @@ var google_script_url = "https://script.google.com/macros/s/AKfycbzkiet3Bvvr_BC1
 
 function Sendresult(callback){
 
+  console.log(JSON.stringify(answer));
+
   $.ajax({
     url: google_script_url, 
     type: "GET",   
@@ -251,8 +253,11 @@ function Sendresult(callback){
     cache: false,
     data: JSON.stringify(answer),
     success: function(response){                          
-        alert(response);                   
-    }      
+        google_doc_result(callback,response);                   
+    },
+    error: function(response)){
+        console.log(response);
+    }   
   });
 }
 
