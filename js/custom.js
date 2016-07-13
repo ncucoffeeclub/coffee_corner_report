@@ -7,8 +7,8 @@ $(document).ready(function(){
     });
 });
 
-function press_enter(button){
-  $('#'+button_id[button]).on('keyup keypress', function(e) {
+function press_enter(box_id,button){
+  $('#'+box_id).on('keyup keypress', function(e) {
     var key = window.event ? e.keyCode : e.which;  
     if (key == 13) {
       $('#'+button_id[button]).click(); 
