@@ -68,6 +68,8 @@ function fading(from,to){
   if(from == null){
     from = now_page;
   }
+  $('#'+button_id[from]).prop('disabled', true);
+  
   $('#page_nav_'+from).removeClass('active');
   fadeOut(iBase.Id(page_id[from]),20,0,function(){
     if(to < button_id.length){
@@ -85,9 +87,6 @@ function fading(from,to){
 
 
 function change_page(from,to){
-
-  $('#'+button_id[from]).prop('disabled', true);
-  
 
   switch(from){
     case 0:
