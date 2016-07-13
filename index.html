@@ -102,6 +102,43 @@
 
 		</form>
 
+		<form class="form-style" id="profile-fb-name">
+
+		 	<div class="row">
+		 		<div class="col-xs-1 no-padding">
+		 			<div class="question-number">
+		 				1.
+		 			</div>
+		 		</div>
+		 		<div class="col-xs-11">
+		 			<div class="question-title">
+		 				<div id="profile-fb-name-plugin_name" class="same-line"></div> 你好，請問您的 facebook 名稱
+		 			</div>
+		 			<div class="question-subtitle">
+		 				為了之後能找到您，麻煩您填寫拉。
+		 			</div>
+		 		</div>
+		 	</div>
+
+			<div class="row">
+				<div class="form-group">
+				    <div class="col-xs-10 col-xs-offset-1">
+				    	<div class="question-text">
+				        	<input type="text" class="formInput" id="fbname">
+				    	</div>
+				    </div>
+				</div>
+			</div>
+
+			
+		 	<div class="row">
+		 		<div class="col-xs-10 col-xs-offset-1 text-left">
+		 			<button id="profile-fb-name-button" type="button" class="btn btn-primary btn-md submit-button continue-button" onclick="change_page(2,3)">繼續</button>
+		 		</div>
+	 		</div>
+
+		</form>
+
 		 <form class="form-style" id="profile-grade">
 
 		 	<div class="row">
@@ -112,7 +149,7 @@
 		 		</div>
 		 		<div class="col-xs-11">
 		 			<div class="question-title">
-		 				<div id="profile-grade-plugin_nmae" class="same-line"></div> 你好，請問你目前是?
+		 				請問 <div id="profile-grade-plugin_name" class="same-line"></div> 目前是?
 		 			</div>
 		 			<div class="question-subtitle">
 		 				為了之後能找到您，麻煩您填寫拉。
@@ -125,10 +162,13 @@
 				    <div class="col-xs-10 col-xs-offset-1">	
 				        <div class="btn-group btn-group-vertical " data-toggle="buttons">
 					        <label class="btn active question-radio">
-					          <input type="radio" name='gender1' value="1" checked><i class="fa fa-circle-o"></i><i class="fa fa-check-circle-o "></i> 在校生
+					          <input type="radio" name='gender-grade' value="0" checked><i class="fa fa-circle-o"></i><i class="fa fa-check-circle-o "></i> 在校生
 					        </label>
 					        <label class="btn question-radio">
-					          <input type="radio" name='gender1' value="2"><i class="fa fa-circle-o "></i><i class="fa fa-check-circle-o"></i> 準碩一/準大一
+					          <input type="radio" name='gender-grade' value="1"><i class="fa fa-circle-o "></i><i class="fa fa-check-circle-o"></i> 準大一
+					        </label>
+					        <label class="btn question-radio">
+					          <input type="radio" name='gender-grade' value="2"><i class="fa fa-circle-o "></i><i class="fa fa-check-circle-o"></i> 準碩一
 					        </label>
 					    </div>
 				    </div>
@@ -138,7 +178,7 @@
 			
 		 	<div class="row">
 		 		<div class="col-xs-10 col-xs-offset-1 text-left">
-		 			<button id="profile-grade-button" type="button" class="btn btn-primary btn-md submit-button continue-button" onclick="change_page(2,3)">繼續</button>
+		 			<button id="profile-grade-button" type="button" class="btn btn-primary btn-md submit-button continue-button" onclick="change_page(3,4)">繼續</button>
 		 		</div>
 	 		</div>
 
@@ -155,7 +195,7 @@
 		 		</div>
 		 		<div class="col-xs-11">
 		 			<div class="question-title">
-		 				請問你就讀的<div id="profile-message" class="same-line"></div>是?
+		 				請問 <div id="profile-message-plugin_name" class="same-line"></div> 之前就讀的<div id="profile-message-plugin_question" class="same-line"></div>是?
 		 			</div>
 		 			<div class="question-subtitle">
 		 				為了之後能找到您，麻煩您填寫拉。
@@ -176,7 +216,7 @@
 			
 		 	<div class="row">
 		 		<div class="col-xs-10 col-xs-offset-1 text-left">
-		 			<button id="profile-message-button" type="button" class="btn btn-primary btn-md submit-button continue-button" onclick="change_page(2,3)">繼續</button>
+		 			<button id="profile-message-button" type="button" class="btn btn-primary btn-md submit-button continue-button" onclick="change_page(4,5)">繼續</button>
 		 			<!-- 或使用 facebook 繼續
 		 			<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
 							</fb:login-button> -->
@@ -223,7 +263,7 @@
 
 			<div class="row">
 		 		<div class="col-xs-10 col-xs-offset-1 text-left">
-		 			<button id="first-question-button" type="button" class="btn btn-primary btn-md submit-button continue-button" onclick="change_page(3,4)">繼續</button>
+		 			<button id="first-question-button" type="button" class="btn btn-primary btn-md submit-button continue-button" onclick="change_page(5,6)">繼續</button>
 		 		</div>
 	 		</div>
 
@@ -267,7 +307,7 @@
 
 			<div class="row">
 		 		<div class="col-xs-10 col-xs-offset-1 text-left">
-		 			<button id="second-question-button" type="button" class="btn btn-primary btn-md submit-button continue-button" onclick="change_page(4,5)">繼續</button>
+		 			<button id="second-question-button" type="button" class="btn btn-primary btn-md submit-button continue-button" onclick="change_page(6,7)">繼續</button>
 		 		</div>
 	 		</div>
 
@@ -311,7 +351,7 @@
 
 			<div class="row">
 		 		<div class="col-xs-10 col-xs-offset-1 text-left">
-		 			<button id="third-question-button" type="button" class="btn btn-primary btn-md submit-button continue-button" onclick="change_page(5,6)">送出</button>
+		 			<button id="third-question-button" type="button" class="btn btn-primary btn-md submit-button continue-button" onclick="change_page(7,8)">送出</button>
 		 		</div>
 	 		</div>
 
